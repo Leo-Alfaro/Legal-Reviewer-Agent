@@ -1,0 +1,154 @@
+extract_info:
+  description: >
+    Extract all the information from the file at {path}.
+    This file is a contract for a software services company.
+    To get access to the file, you need to use {path} in the tool file_tool as the argument, only the {path}, not the dictionary.
+    And modify the text to be plain text with all the information, topics, and their breakdown. Keep the language that was extracted from the file.
+  expected_output: >
+    A raw text with all the information, topics, and their breakdown.
+    Good Output:
+    "Application Development Service Agreement  
+    Client: Future Example Company LTDA, registered under CNPJ No. 00.000.000/0001-00, headquartered at Avenida Imaginária, No. 9999, Fictitious Neighborhood, ZIP Code 00000-000, Invented City/ZZ, represented by Fulana de Tal.
+    Contractor: CodeFantasma Studios S/A, registered under CNPJ No. 99.999.999/9999-99, headquartered at Rua dos Devs Invisíveis, No. 42, Null Neighborhood, ZIP Code 99999-999, Abstract State/XY, represented by Ciclano Exemplar.
+    The parties above enter into this service agreement under the following clauses.
+    Purpose: The purpose of this agreement is the development of a cross-platform application (mobile and web) aimed at organizing impossible tasks and fanciful reminders, provisionally named AppNadaFeito.
+    Scope of services: The contractor agrees to develop the technical project and development timeline, create responsive design interfaces focused on UX/UI, develop the application for Web (React) and Mobile (Flutter), integrate with authentication systems, notifications, and simulated databases, deploy a fictional staging and production environment, provide illustrative technical documentation, and offer technical support for 60 days after symbolic delivery.
+    Term: The estimated time to complete the project is 60 calendar days, starting from the receipt of all materials and the approval of the initial layout. Any significant change in scope may require a revision of the timeline and cost.
+    Price and payment: The total project cost is R$ 99,999.99. Payment shall be made as follows: 30% (R$ 29,999.99) upon signing the contract, 40% (R$ 39,999.99) upon delivery of the imaginary functional prototype, and 30% (R$ 29,999.99) upon final delivery and publication on fictional servers.
+    Revisions: Up to 3 rounds of adjustments are foreseen during development, based on the client’s feedback. Adjustments outside the initial scope will be charged separately according to the contractor’s pricing table.
+    Intellectual property: Upon full payment, all source code and project artwork shall belong to the client. The contractor may retain generic code snippets for reuse, provided they do not compromise the confidentiality or identity of the project.
+    Confidentiality: Both parties agree not to disclose any confidential, strategic, or commercial information obtained during the execution of this agreement.
+    Warranty and support: The contractor offers technical support and bug fixes for 60 days after final delivery. Modifications or maintenance after this period must be contracted separately.
+    Termination: In case of contractual breach, either party may terminate this agreement unilaterally by giving 10 days’ notice. The client must pay for services rendered up to the termination date. 
+    General provisions: This contract represents the entire understanding between the parties. Any amendment or modification must be made in writing and signed by both parties.
+    Jurisdiction: To resolve disputes, the parties elect the court of the District of Invented City/ZZ.
+    Signed in Invented City, June 15, 2025. 
+    Client: Fulana de Tal, CPF: 000.111.222-33
+    Contractor: Ciclano Exemplar, CPF: 999.888.777-66"
+  agent: extractor
+
+contract_analyser_info:
+  description: >
+    Verify all the common errors and vulnerabilities in the contract,
+    such as ambiguous or imprecise language, poorly defined obligations, incorrect party identification, 
+    incomplete payment terms, disproportionate penalties, unstructured termination clauses, 
+    omitted jurisdiction/governing law, missing referenced attachments, 
+    absence of essential clauses (confidentiality, force majeure, etc.), disorganized drafting, and 
+    ignoring specific legal requirements (e.g., data protection laws).
+    You can use the SerperDevTool to search for laws or requirements on the web.
+    If the contract does not have any of these errors, you should say that the contract is good.
+  expected_output: >
+    A raw text string only with the common errors and vulnerabilities found in the contract.
+    Good Output:
+    "Contract Analysis Report
+    - Warranty exclusions omitted (Clause 8.1): Unclear what constitutes "falhas" versus excluded scenarios (e.g., client modifications).
+    - Termination vagueness (Clause 9.1): "Descumprimento contratual" isn't defined, and 10-day cure period may be impractical.
+    - Governing law gap (Clause 11): No explicit choice of law (e.g., Brazilian Civil Code), only jurisdiction.
+    - Missing force majeure: No provision for delays/cancellations due to unforeseen events.
+    - No dispute resolution process: Absence of mandatory mediation/arbitration before litigation.
+    - Currency risk (Clause 4.1): International contracts should specify currency conversion mechanisms if applicable."
+  context: [extract_info]
+  agent: contract_analyser
+  output_file: ./outputs/case1.md
+
+case_finder_info:
+  description: >
+    Identify and mitigate potential legal issues in the contract before they become problems,
+    focusing on drafting clear, compliant contracts and ensuring adherence to laws and regulations.
+    You can use the SerperDevTool to search for laws or requirements on the web.
+    If the contract does not have any of these errors, you should say that the contract is good.
+  expected_output: >
+    A raw text string only with the potential legal issues found in the contract.
+    Good Output:
+    "Potential Legal Issues Report
+    - Ambiguous language in Clause 3.1 regarding "desenvolvimento do projeto técnico" could lead to scope disputes.
+    - Lack of clear payment milestones in Clause 4.2 may result in cash flow issues for the contractor.
+    - No defined process for handling client feedback in Clause 5.1, risking project delays.
+    - Absence of a confidentiality clause may expose sensitive information to third parties.
+    - No dispute resolution mechanism (e.g., mediation) could lead to costly litigation."
+  context: [extract_info]
+  agent: case_finder
+  output_file: ./outputs/case2.md
+
+contract_lawyer_info:
+  description: >
+    You received the original contract and two reports of potential errors. Rewrite the entire contract, incorporating changes that fix each problem indicated.
+    You must present the full text of the contract, including all corrections, and not merely list issues. You must 
+    explicitly insert or elaborate on any missing clauses—such as those related to intellectual property, 
+    confidentiality, force majeure, annexes, and so on—and must reformulate any vague terms regarding payment or scope.
+    Ensure that it is legally sound and compliant with applicable laws and regulations of the country of the original contract.
+    Revise the contract to guarantee that it is clear, precise, and comprehensive, addressing all the issues raised by the other agents.
+    Maintain the original language of the contract.
+    If the contract does not have any of these errors, you should say that the contract is good.
+  expected_output: >
+    A formatted text string only with the modified contract, resolving all the problems and risks identified by the other agents.
+    Good Output (consider all the problems were fixed):
+    "SERVICE AGREEMENT FOR MOBILE AND WEB APPLICATION DEVELOPMENT
+    
+    CLIENT: Future Example Company Ltd., registered under CNPJ No. 00.000.000/0001-00, with headquarters at 9999 Imaginary Avenue, Fictitious District, ZIP Code 00000-000, Invented City/ZZ, herein represented by Fulana de Tal, hereinafter referred to as "CLIENT".
+    
+    CONTRACTOR: CodeGhost Studios Inc., registered under CNPJ No. 99.999.999/9999-99, with headquarters at 42 Invisible Devs Street, Null District, ZIP Code 99999-999, Abstract State/XY, herein represented by Ciclano Exemplar, hereinafter referred to as "CONTRACTOR".
+    
+    The parties above agree to enter into this Service Agreement under the following terms and conditions:
+    
+    OBJECT
+    1.1. This agreement covers the development of a cross-platform application (mobile and web) focused on organizing impossible tasks and fictional reminders, tentatively named "NothingDoneApp".
+    
+    SCOPE OF SERVICES
+    2.1. The CONTRACTOR agrees to:
+    a) Prepare the technical project and development schedule;
+    b) Design responsive user interfaces with a focus on UX/UI;
+    c) Develop the application for Web (React) and Mobile (Flutter);
+    d) Integrate with authentication systems, notifications, and simulated databases;
+    e) Deploy to a fictional staging and production environment;
+    f) Provide illustrative technical documentation;
+    g) Offer technical support for 60 days after symbolic delivery.
+    
+    TERM
+    3.1. The estimated time for completion of the project is 60 (sixty) calendar days, starting from the receipt of all required materials and approval of the initial layout.
+    3.2. Any significant change in scope may result in revised timelines and costs.
+    
+    PAYMENT
+    4.1. The total project value is R$ 99,999.99 (ninety-nine thousand, nine hundred and ninety-nine reais and ninety-nine cents).
+    4.2. Payment shall be made as follows:
+    a) 30% (R$ 29,999.99) upon signing this agreement;
+    b) 40% (R$ 39,999.99) upon delivery of the fictional functional prototype;
+    c) 30% (R$ 29,999.99) upon final delivery and deployment to fictional servers.
+    
+    REVISIONS
+    5.1. Up to 3 (three) rounds of revisions are included during development, based on CLIENT feedback.
+    5.2. Requests outside the original scope will be treated as additional work and billed separately, according to the CONTRACTOR's magical price list.
+    
+    INTELLECTUAL PROPERTY
+    6.1. Upon full payment, all source code and project artwork shall belong to the CLIENT.
+    6.2. The CONTRACTOR may retain generic code snippets in its repository for reuse, provided they do not compromise confidentiality or project identity.
+    
+    CONFIDENTIALITY
+    7.1. Both parties agree not to disclose confidential, strategic, or business information obtained during the execution of this contract.
+    
+    WARRANTY AND SUPPORT
+    8.1. The CONTRACTOR offers technical support and bug fixes for 60 (sixty) days from the date of final delivery.
+    8.2. Modifications or maintenance beyond the warranty period must be contracted separately.
+    
+    TERMINATION
+    9.1. In the event of contractual breach, this agreement may be unilaterally terminated upon 10 (ten) days' notice.
+    9.2. The CLIENT agrees to pay for services proportionally rendered up to the date of termination.
+    
+    GENERAL PROVISIONS
+    10.1. This agreement represents the entire understanding between the parties.
+    10.2. Any amendment must be in writing and signed by both parties.
+    
+    JURISDICTION
+    11.1. The parties elect the courts of Invented City/ZZ to settle any disputes, waiving any other jurisdiction.
+    
+    IN WITNESS WHEREOF, the parties execute this instrument in two identical copies.
+    
+    Invented City, June 15, 2025.
+    
+    CLIENT                                 CONTRACTOR
+    
+    Fulana de Tal                         Ciclano Exemplar
+    CPF: 000.111.222-33                  CPF: 999.888.777-66"
+  context: [extract_info, contract_analyser_info, case_finder_info]
+  agent: Contract_Lawyer
+  output_file: ./outputs/report.md

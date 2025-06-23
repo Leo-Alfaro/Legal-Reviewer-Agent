@@ -1,0 +1,11 @@
+Potential Legal Issues Report
+- O contrato não define um procedimento detalhado para aceite formal da entrega da Landing Page, o que pode gerar disputas sobre a conclusão dos serviços.
+- Não há previsão clara sobre a responsabilidade por eventuais violações de direitos autorais de terceiros em relação a conteúdos fornecidos pela CONTRATANTE (ex: imagens, textos).
+- A cláusula de propriedade intelectual (6.1) concede apenas “direito de uso” à CONTRATANTE, sem especificar se há cessão total dos direitos patrimoniais, o que pode gerar dúvidas sobre alterações futuras ou reutilização do material.
+- O contrato não prevê expressamente a possibilidade de suspensão dos serviços em caso de inadimplência, o que pode obrigar a CONTRATADA a continuar prestando serviços mesmo sem pagamento.
+- Não há cláusula de limitação de responsabilidade, o que pode expor ambas as partes a riscos financeiros elevados em caso de danos indiretos ou lucros cessantes.
+- Não há previsão sobre a forma de comunicação oficial entre as partes (e-mail, carta registrada, etc.), o que pode dificultar a comprovação de notificações e prazos.
+- A cláusula de rescisão (9.1) não detalha hipóteses de rescisão por justa causa, como descumprimento contratual, caso fortuito ou força maior.
+- Não há previsão sobre a guarda e devolução de dados e materiais fornecidos após o término do contrato, o que pode gerar riscos de uso indevido ou vazamento de informações.
+- Não há cláusula específica sobre proteção de dados pessoais (LGPD), importante quando há coleta de leads e integração com CRM, podendo gerar riscos de não conformidade com a legislação vigente.
+- O contrato não prevê a possibilidade de revisão de valores em caso de alterações significativas de escopo, o que pode gerar desequilíbrio econômico-financeiro para a CONTRATADA.

@@ -1,0 +1,11 @@
+Contract Analysis Report
+
+- Governing law gap (Clause 11): The contract specifies only the jurisdiction ("foro da Comarca de São Paulo/SP") but does not explicitly state the governing law (e.g., "as leis da República Federativa do Brasil"), which is a best practice for legal certainty.
+- Missing force majeure: There is no clause addressing force majeure, unforeseeable events, or hardship, which is recommended and often implied under Brazilian law but should be expressly stated to avoid disputes over delays or non-performance due to events beyond the parties' control.
+- No dispute resolution process: The contract lacks a clause specifying a process for resolving disputes (e.g., negotiation, mediation, or arbitration) before resorting to litigation, which is a common and recommended provision in service contracts.
+- Warranty exclusions omitted (Clause 8.1): The contract states the contractor is responsible for correcting technical faults but does not clarify exclusions (e.g., failures caused by client modifications, third-party systems, or force majeure), leaving ambiguity about the scope of warranty.
+- Termination clause (Clause 9.1): Allows termination by either party with 15 days' notice but does not specify the procedure for return of materials, data, or partial deliverables, nor does it address termination for breach or force majeure.
+- Data protection and compliance: There is no mention of compliance with data protection laws (such as LGPD in Brazil), which is relevant since the contract involves handling leads and potentially personal data.
+- Attachments and referenced documents: The contract refers to a "briefing e especificações acordadas" but does not attach or reference these documents formally, which may cause disputes over the scope of work.
+- Absence of anti-corruption/anti-bribery clause: While not always mandatory, it is a best practice in Brazilian contracts, especially between companies, to include a statement of compliance with anti-corruption laws.
+- No express clause on severability: The contract does not state that the invalidity of one clause does not affect the validity of the rest, which is a standard boilerplate provision in Brazilian agreements.
